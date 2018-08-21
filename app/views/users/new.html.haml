@@ -1,0 +1,29 @@
+%h1
+  Signup
+
+%h4
+  Enter details
+
+.user-form
+  = form_for @user do |f|
+    .user-input-field
+      = f.label :first_name
+      = f.text_field :first_name, placeholder: 'First Name', autofocus: true
+
+    .user-input-field
+      = f.label :last_name
+      = f.text_field :last_name, placeholder: 'Last Name', autofocus: true
+
+    .user-input-field
+      = f.label :email
+      = f.text_field :email, placeholder: 'Email'
+
+    .user-input-field
+      = f.label :password
+      = f.password_field :password, placeholder: 'Password'
+
+    .user-input-field
+      = f.label :password_confirmation
+      = f.password_field :password_confirmation, placeholder: 'Password Confirmation'
+
+    = f.submit
