@@ -5,7 +5,7 @@ class ExpensesController < ApplicationController
 
   def create
     new_expense = @wedding.expenses.create! expense_params
-    respond_with new_expense
+    respond_with new_expense, location: wedding_expense_path(@wedding, new_expense)
   end
 
   private
@@ -15,6 +15,6 @@ class ExpensesController < ApplicationController
   end
 
   def expense_params
-    params.require(:expense).permit!(:title, :description, :expected_amount, :payable_by_id)
+    params.require(:expense).permit(:title, :description, :expected_amount, :payable_by_id)
   end
 end

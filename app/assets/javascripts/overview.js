@@ -4,14 +4,18 @@ $(function() {
       .modal({
         closable: false,
         onApprove: function() {
-          var $form = $(this).find('form');
+          var $modal = $(this);
+          var $form = $modal.find('form');
           $.ajax({
             url: $form.attr('action'),
             method: 'POST',
             dataType: 'json',
             data: $form.serialize(),
             success: function(data) {
-              console.log('returned expense ', data);
+              $modal.modal('hide');
+            },
+            error: function(data) {
+              // @TODO: add captured errors to the modal display area
             }
           });
 
