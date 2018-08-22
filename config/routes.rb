@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :users
 
+  resources :wedding do
+    resources :expenses
+  end
+
   get '/signup', to: 'users#new'
 
   get '/login', to: 'sessions#new'

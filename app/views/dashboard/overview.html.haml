@@ -1,3 +1,6 @@
+- content_for :javascript do
+  = javascript_include_tag 'overview'
+
 .projection-center
   .up-down-marker
     .green-arrow
@@ -10,3 +13,31 @@
     4L
   .amount-left
     4L
+
+%a.button.massive.green.ui.add-expense{href: '#'}
+  Add Expense
+
+
+.add-expense-modal.ui.modal
+  .header
+    Add a new Expense Item
+  .content.scrolling
+    = form_for :expense, { url: "/wedding/#{@wedding.id}/expenses", method: :post, html: { class: 'ui form expense-form' } } do |f|
+      .field
+        = f.label :title
+        = f.text_field :title
+      .field
+        = f.label 'Description (Optional)'
+        = f.text_field :description
+      .field
+        = f.label :expected_amount
+        = f.text_field :expected_amount
+      .field
+        = f.label 'Payable By'
+        = f.text_field :payable_by_id
+
+  .actions
+    .ui.approve.button.green
+      Add Expense
+    .ui.deny.button.red
+      Cancel
