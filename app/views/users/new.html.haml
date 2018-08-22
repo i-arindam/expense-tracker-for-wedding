@@ -14,18 +14,15 @@
             = f.text_field :last_name, placeholder: 'Last Name', autofocus: true
 
       .field
-        .field
-          = f.label :email
-          = f.text_field :email, placeholder: 'Email'
+        = f.label :email
+        = f.text_field :email, placeholder: 'Email'
 
       .field
-        .field
-          = f.label :password
-          = f.password_field :password, placeholder: 'Password'
+        = f.label :password
+        = f.password_field :password, placeholder: 'Password'
 
       .field
-        .field
-          = f.label :password_confirmation
-          = f.password_field :password_confirmation, placeholder: 'Password Confirmation'
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation, placeholder: 'Password Confirmation'
 
       = f.submit 'Signup', { class: 'ui button green huge'}
