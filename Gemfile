@@ -27,10 +27,16 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-gem 'rspec'
-gem 'jquery-rails'
 
+# view related
+gem 'jquery-rails'
 gem "haml-rails", "~> 1.0"
+
+
+
+# Rails related
+gem 'responders'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
