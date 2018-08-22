@@ -1,3 +1,6 @@
+- content_for :javascript do
+  = javascript_include_tag 'overview'
+
 .projection-center
   .up-down-marker
     .green-arrow
@@ -10,3 +13,20 @@
     4L
   .amount-left
     4L
+
+%a.button.massive.green.ui.add-expense{href: '#'}
+  Add Expense
+
+
+.add-expense-modal.ui.modal
+  .header
+    Add a new Expense Item
+  .content.scrolling
+    = form_tag { action: '/expense', method: :post, class: 'ui form expense-form' }
+      .field
+
+  .actions
+    .ui.approve.button.green
+      Add Expense
+    .ui.deny.button.red
+      Cancel
