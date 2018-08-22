@@ -1,11 +1,14 @@
-%h1
-  Log In
+.ui.container
+  %h1
+    Log In
 
-= form_for :session, { url: login_path } do |f|
-  = f.label :email
-  = f.text_field :email, autofocus: true
+  = form_for :session, { url: login_path, html: { class: 'ui form' } } do |f|
+    .field.ui
+      = f.label :email
+      = f.text_field :email, autofocus: true
 
-  = f.label :password
-  = f.password_field :password
+    .field.ui
+      = f.label :password
+      = f.password_field :password
 
-  = f.submit "Log In"
+    = f.submit 'Log In', { class: 'ui button green huge'}

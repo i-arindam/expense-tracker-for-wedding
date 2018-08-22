@@ -1,29 +1,28 @@
-%h1
-  Signup
+.ui.container.left.aligned
+  %h1
+    Signup
 
-%h4
-  Enter details
+  .user-form
+    = form_for @user, { html: { class: 'ui form' } } do |f|
+      .field
+        .two.fields
+          .field
+            = f.label :first_name
+            = f.text_field :first_name, autofocus: true
+          .field
+            = f.label :last_name
+            = f.text_field :last_name, autofocus: true
 
-.user-form
-  = form_for @user do |f|
-    .user-input-field
-      = f.label :first_name
-      = f.text_field :first_name, placeholder: 'First Name', autofocus: true
+      .field
+        = f.label :email
+        = f.text_field :email
 
-    .user-input-field
-      = f.label :last_name
-      = f.text_field :last_name, placeholder: 'Last Name', autofocus: true
+      .field
+        = f.label :password
+        = f.password_field :password
 
-    .user-input-field
-      = f.label :email
-      = f.text_field :email, placeholder: 'Email'
+      .field
+        = f.label :password_confirmation
+        = f.password_field :password_confirmation
 
-    .user-input-field
-      = f.label :password
-      = f.password_field :password, placeholder: 'Password'
-
-    .user-input-field
-      = f.label :password_confirmation
-      = f.password_field :password_confirmation, placeholder: 'Password Confirmation'
-
-    = f.submit
+      = f.submit 'Signup', { class: 'ui button green huge'}
